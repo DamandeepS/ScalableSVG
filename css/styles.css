@@ -1,0 +1,122 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: url("../images/noisy_grid.png") repeat;
+}
+
+.svg-container {
+  
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  min-height: 50px;
+  min-width: 80px;
+  left: 50%;
+  overflow: hidden;
+}
+
+.svg-container svg {
+  /* margin: 5px; */
+}
+
+.svg-container .positioner {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background-image: url("../images/position-icon.png");
+  background-size: cover;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.svg-container .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 1111;
+  background: rgba(56, 29, 138, 0.95);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.svg-container .top-left-dot {
+  top:0;
+  left:0;
+  z-index: 1;
+  
+}
+
+.svg-container .dot:hover {
+  background: rgba(56, 29, 248, 1);
+  transition: 0.2 linear all;
+}
+
+.svg-container .dot:after {
+  content: "";
+  height: 99999px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border:1px dashed rgba(56, 29, 138, 0.55);;
+}
+.svg-container .dot:before {
+  content: "";
+  width: 99999px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border:1px dashed rgba(56, 29, 138, 0.55);;
+}
+
+.svg-container .bottom-left-dot {
+  bottom:0;
+  left:0;
+}
+.svg-container .top-right-dot {
+  top:0;
+  right:0;
+}.svg-container .bottom-right-dot {
+  right:0;
+  bottom:0;
+}
+
+.svg-container .resizer {
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 20px;
+  transition: 0.12s linear all;
+  right: 50px;
+  background-image: url("../images/resize-icon.svg");
+  cursor: pointer;
+  background-size: cover;
+}
+
+.svg-container .resizer.active {
+  background-image: url("../images/resize-active-icon.svg");
+}
+
+
+.svg-container .rotator {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 1111;
+  top: 10px;
+  right: 10px;
+  background-image: url("../images/rotate.svg");
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
